@@ -634,15 +634,11 @@ body {
   display: none;
 }
 
-.menu[data-state="initial"] > .menu__item.drag, .menu[data-state="initial"] > .menu__item.new, .menu[data-state="initial"] > .menu__item.burger {
+.menu[data-state="initial"] > .menu__item.drag, .menu[data-state="initial"] > .menu__item.new, .menu[data-state="initial"] {
   display: inline-block;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ default ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-.menu[data-state="default"] > .menu__item.burger {
-  display: none;
-}
 
 .menu[data-state="default"] > .mode {
   display: inline-block;
@@ -664,4 +660,73 @@ body {
 
 .menu[data-state="selected"] > .menu__item[data-state="selected"], .menu__item[data-state="selected"] + .tool {
   display: inline-block;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ new style ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+}
+
+.comments-canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0.1rem 0.17rem 1rem #000000;
+  z-index: 0;
+}
+
+.image-canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0.1rem 0.17rem 1rem #000000;
+  z-index: 0;
+}
+
+.user_image {
+  width: 100%;
+  height: 100%;
+}
+
+.new {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 6.3rem;
+  padding: 0 1.4rem;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #b5c6d6;
+  background-color: #384654;
+  cursor: pointer;
+}
+
+.new .menu__item-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.new > menu__item-title, .new > new-icon {
+  float: right;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  text-align: center
+}
+
+.new input[type=file] {
+  position: absolute;
+  left: 0px;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
 }
