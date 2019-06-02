@@ -63,12 +63,12 @@ function makePoint(x, y) {
 // События
 canvas.addEventListener('mousedown', event => {
   if (draw.dataset.state !== 'selected') return;
-	drawing = true;
-	let curve = [];
-	curve.color = currentColor;
-	curve.push(makePoint(event.offsetX, event.offsetY));
-	curves.push(curve);
-	needsRepaint = true;
+  drawing = true;
+  let curve = [];
+  curve.color = currentColor;
+  curve.push(makePoint(event.offsetX, event.offsetY));
+  curves.push(curve);
+  needsRepaint = true;
 });
 
 canvas.addEventListener('mouseup', () => {
@@ -83,10 +83,10 @@ canvas.addEventListener('mousemove', event => {
   if (draw.dataset.state !== 'selected') return;
 
   if (drawing) {
-		const point = makePoint(event.offsetX, event.offsetY);
-		curves[curves.length - 1].push(point);
-		needsRepaint = true;
-		debounceSendImageToServer();
+    const point = makePoint(event.offsetX, event.offsetY);
+    curves[curves.length - 1].push(point);
+    needsRepaint = true;
+    debounceSendImageToServer();
   }
 });
 
